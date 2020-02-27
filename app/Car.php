@@ -25,7 +25,7 @@ class Car extends Model
 
     public function getLatestBidAttribute()
     {
-        return $this->bids()->latest()->first();
+        return $this->bids()->lockForUpdate()->latest()->first();
     }
 
     public function getLatestBidAmountAttribute()
